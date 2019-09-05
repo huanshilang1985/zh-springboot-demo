@@ -1,0 +1,10 @@
+微服务的问题：
+    负载均衡    -- nginx, ribbon
+    熔断，限流，降级   -- hystrix
+    网关，路由，过滤   -- zuul
+    服务注册、发现监听，   -- eureka, zookeeper
+
+
+user 端口 5001
+power1   5002
+power2   5003
