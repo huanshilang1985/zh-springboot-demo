@@ -5,13 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>zh-springboot-user</module>
         <module>zh-springboot-common</module>
-        <module>zh-springboot-power</module>
-        <module>zh-springboot-power2</module>
-        <module>zh-springcloud-eureka</module>
-        <module>zh-springcloud-zuul</module>
-        <module>zh-springcloud-config</module>
+        <module>zh-springboot-first</module>
+        <module>zh-springboot-demo2</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
