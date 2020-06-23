@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active:  # 声明要使用的配置文件
+      - dev
+
+
+#logging:
+#  # 指定日志配置文件
+#  config: classpath:logback.xml
+#
+#
+
+
+user:
+  id: 1111
+  name: 2222
+  password: 3333
