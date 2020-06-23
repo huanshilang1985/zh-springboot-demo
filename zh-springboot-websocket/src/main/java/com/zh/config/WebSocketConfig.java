@@ -10,7 +10,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
  * WebSocket配置
  *
  * @author he.zhang
- * @date 2020/3/12 19:47
+ * @since 2020/3/12 19:47
  */
 @Configuration
 @EnableWebSocketMessageBroker

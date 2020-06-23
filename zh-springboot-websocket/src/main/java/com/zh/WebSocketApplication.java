@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/3/12 17:55
  */
 @SpringBootApplication
-public class Demo2Application {
+public class WebSocketApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Demo2Application.class);
+        SpringApplication.run(WebSocketApplication.class);
         System.out.println(" ========Demo2Application Start======== ");
     }
 

@@ -1,0 +1,38 @@
+server:
+  # 设置服务器端口，默认是8080
+  port: 80
+  # 设置URL上下文，默认是/
+  servlet:
+    context-path: /zh
+
+# 调试模式开启，默认是false
+debug: false
+
+# 字符编码，默认utf-8
+spring:
+  banner:
+    charset: UTF-8
+  # 开启页面缓存，默认是true（开发测试阶段建议关闭缓存）
+  # 影响缓存的还有Idea设置，File--Setting--Build,Execution,Deployment---Compiler---勾选Build project automatically
+  thymeleaf:
+    cache: false
+  # 日期输入格式
+  mvc:
+    date-format: yyyy-MM-dd
+  # json输出的日期格式
+  jackson:
+    date-format: yyyy-MM-dd
+  # 设置GMT时区
+    time-zone: GMT+8
+
+# 这是SpringBoot自带的日志配置。如果使用其他日志框架，下面的配置就不需要了。
+#logging:
+#  # 设置日期输出路径
+#  file: d:/logs/logs-first.log
+#  # 设置根目录root日志输出级别，如果设置debug，等于设置了debug: true
+#  level:
+#    root: INFO
+#    # 也可以指定各包路径的日志级别
+#    org:
+#      springframework: ERROR
+#      apache: ERROR

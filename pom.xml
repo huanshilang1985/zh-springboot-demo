@@ -7,7 +7,10 @@
     <modules>
         <module>zh-springboot-common</module>
         <module>zh-springboot-first</module>
-        <module>zh-springboot-demo2</module>
+        <module>zh-springboot-websocket</module>
+        <module>zh-springboot-rest</module>
+        <module>zh-springboot-api</module>
+
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
