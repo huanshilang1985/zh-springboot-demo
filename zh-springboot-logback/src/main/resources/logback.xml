@@ -1,0 +1,22 @@
+<configuration>
+    <!-- 定义日志输出格式： %date=日期， %thread=线程名， %-5level=级别从左显示5个字符宽度， %logger{36}=logger名字长36个字符， %msg=日志消息， %n=换行符。 -->
+    <property name="LOG_PATTERN" value="%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
+
+    <conversionRule conversionWord="msg" converterClass="com.zh.LogMessageConverter"/>
+
+    <!-- 在控制台输出日志 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- 打印格式 -->
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 设置固定路径的日志级别 -->
+    <!--<logger name="com.zh.common.config" level="INFO" />-->
+
+    <!-- 打印日志级别 -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

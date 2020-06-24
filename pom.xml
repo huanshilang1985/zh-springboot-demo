@@ -11,7 +11,8 @@
         <module>zh-springboot-rest</module>
         <module>zh-springboot-api</module>
         <module>zh-springboot-redisson</module>
-
+        <module>zh-springboot-async</module>
+        <module>zh-springboot-logback</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,18 +29,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <hutool.version>5.3.4</hutool.version>
+        <logback.version>1.2.3</logback.version>
+        <lombok.version>1.18.2</lombok.version>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.SR2</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>
