@@ -13,6 +13,10 @@
         <module>zh-springboot-redisson</module>
         <module>zh-springboot-async</module>
         <module>zh-springboot-logback</module>
+        <module>zh-springboot-session</module>
+        <module>zh-test</module>
+        <module>zh-springboot-limit</module>
+        <module>zh-springboot-security</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,9 +32,39 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <zh.logback.version>1.0-SNAPSHOT</zh.logback.version>
         <hutool.version>5.3.4</hutool.version>
         <logback.version>1.2.3</logback.version>
         <lombok.version>1.18.2</lombok.version>
+        <druid.version>1.1.22</druid.version>
+        <commons-pool2.version>2.5.0</commons-pool2.version>
+        <mapstruct.version>1.3.1.Final</mapstruct.version>
+        <mysql.version>8.0.13</mysql.version>
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

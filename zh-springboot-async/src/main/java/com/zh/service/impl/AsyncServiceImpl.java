@@ -21,14 +21,14 @@ public class AsyncServiceImpl implements AsyncService {
     /**
      * 注解@Async需要放在Service层，并指定返回值，放到Controller层会失效。
      */
-    @Async("myThreadPool")
+    @Async
     @Override
     public Future<String> taskA() {
         log.info("当前线程：[{}]", Thread.currentThread().getName());
         return new AsyncResult<>("hello world task A");
     }
 
-    @Async("myThreadPool")
+    @Async
     @Override
     public Future<String> taskB() {
         log.info("当前线程：[{}]", Thread.currentThread().getName());

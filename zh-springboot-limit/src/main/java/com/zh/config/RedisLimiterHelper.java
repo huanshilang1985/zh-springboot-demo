@@ -1,0 +1,31 @@
+package com.zh.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+import java.io.Serializable;
+
+/**
+ * 声明RedisTemplate
+ *
+ * @author he.zhang
+ * @since 2020/7/8 11:33
+ */
+@Configuration
+public class RedisLimiterHelper {
+
+    @Bean
+    public RedisTemplate<String, Serializable> limitRedisTemplate(LettuceConnectionFactory redisConnectionFactory){
+        RedisTemplate<String, Serializable> template = new RedisTemplate<>();
+        template.setValueSerializer(new StringRedisSerializer());
+        template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+        template.setConnectionFactory(redisConnectionFactory);
+        return template;
+    }
+
+
+}

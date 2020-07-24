@@ -1,34 +1,43 @@
 package com.zh.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 /**
+ * 自定义线程池，实现AsyncConfigurer接口，@Async的异步线程会自动使用
+ *
  * @author he.zhang
  * @since 2020/6/24 16:34
  */
 @EnableAsync
 @Configuration
-public class ThreadPoolConfig {
+public class ThreadPoolConfig implements AsyncConfigurer {
 
-
-    @Bean(name = "myThreadPool")
-    public static ThreadPoolExecutor myThreadPoolExecutor(){
-        // 线程池核心线程数量
-        int corePoolSize = 12;
-        // 线程池最大数量
-        int maximumPoolSize = 24;
-        // 空闲线程存活时间
-        long keepAliveTime = 5;
-        // 缓冲队列
-        BlockingQueue queue = new ArrayBlockingQueue(20);
-        return new ThreadPoolExecutor(corePoolSize,maximumPoolSize, keepAliveTime, TimeUnit.MINUTES, queue);
+    @Override
+    public Executor getAsyncExecutor() {
+        ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
+        // 最小线程数
+        taskExecutor.setCorePoolSize(12);
+        // 最大线程数
+        taskExecutor.setMaxPoolSize(24);
+        // 允许的空闲时间
+        taskExecutor.setKeepAliveSeconds(5);
+        // 等待队列数量
+        taskExecutor.setQueueCapacity(10);
+        // 淘汰策略
+        taskExecutor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+        // 线程名前缀
+        taskExecutor.setThreadNamePrefix("getAsyncExecutor-");
+        taskExecutor.initialize();
+        return taskExecutor;
     }
+
+
+
 
 }
