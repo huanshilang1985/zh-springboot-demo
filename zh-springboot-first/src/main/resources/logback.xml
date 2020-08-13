@@ -126,11 +126,10 @@
     <!-- SQL相关日志输出-->
     <logger name="org.apache.ibatis" level="INFO" additivity="false" />
     <logger name="org.mybatis.spring" level="INFO" additivity="false" />
-    <logger name="com.github.miemiedev.mybatis.paginator" level="INFO" additivity="false" />
 
     <!-- Logger 根目录 -->
     <!-- 日志输出级别 -->
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="DEBUG" />
         <appender-ref ref="ERROR" />

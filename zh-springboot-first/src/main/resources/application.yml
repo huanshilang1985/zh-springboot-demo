@@ -3,8 +3,8 @@ server:
   # 设置服务器端口，默认是8080
   port: 80
   # 设置URL上下文，默认是/
-  servlet:
-    context-path: /zh
+#  servlet:
+#    context-path: /zh
 
 # 调试模式开启，默认是false
 debug: false
